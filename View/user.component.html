@@ -1,0 +1,58 @@
+<section id="user">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-lg-offset-3">
+                <div class="form-wrap">
+                    <!-- user data submit form-->
+                    <h2>Add User</h2>
+                    <form>
+                        <div class="form-group">
+                            <label>Myuser</label>
+                            <select class="form-control" [(ngModel)]="currentUser.myuser" name="myuser">
+                                <option value="myuser"[disabled]="true">select option</option>
+                                <option *ngFor="let myuser of usermyuserList"[ngValue]="myuser.title">
+                                    {{myuser.title}}
+                                </option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>FirstName</label>
+                            <input type="text" class="form-control" [(ngModel)]="currentUser.firstName" name="firstName" 
+                            placeholder="FirstName" #first>
+                            <label>LaststName</label>
+                            <input type="text" class="form-control" [(ngModel)]="currentUser.lastName" name="lastName" 
+                            placeholder="LastName" #last>
+                            <button type="submit" class="btn btn-primary"(click)="adduser()">submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <div class="row">
+                <div class="col-lg-3 col-lg-offset-3">
+                    <!--show user list when it has records-->
+                    <table *ngIf="userList.length>1" class="table table-bordered table-striped"></table>
+                    <tr>
+                        <th>Index</th>
+                        <th>myuser</th>
+                        <th>FirstName</th>
+                        <th>LaststName </th>
+                    </tr>
+                    <td>{{i+1}}</td>
+                    <td>{{user.myuser}}</td>
+                    <td>{{user.firstName}}</td>
+                    <td>{{user.LastName}}</td>
+                </div>
+            </div>
+        </div></div>
+</section>
+
+
+
+
+
+
+
+                            
+
